@@ -1,0 +1,28 @@
+Data Binding - Sharing data inside a component
+
+1. One way Binding
+
+    html -> ts   or   ts -> html
+
+    ts-component
+    html-view
+
+    1.1,  Component to view (ts -> html)
+        a) string interpolation - {{expression}}
+        b) property binding - [attribute name]="property"
+    
+    1.2,  View to component (html -> ts)
+        a) Event binding - (event name)="function name()"
+        b) Event binding using $(event) - (event name)="function name($event)"
+        c) Event binding using template referencing variable - #variablename
+2. Two way Binding 
+
+
+
+Angular Routing
+
+-To set path for a component
+
+{
+    path: value, component: class-name
+}
