@@ -20,9 +20,43 @@ Data Binding - Sharing data inside a component
 
 
 Angular Routing
-
+---------------
 -To set path for a component
 
 {
     path: value, component: class-name
 }
+
+use <router-outlet></router-outlet> inside root component
+
+
+
+Dependancy Injection
+---------------------
+To share data between depentant classes
+
+
+Angular Services
+----------------
+ng g s servicename
+
+
+Angular Directives
+----------------
+To manipulate DOM elements
+
+    a)component directives
+
+    b)structral directives
+        1) ngFor
+
+
+Angula Forms
+----------------
+a)Template Driven Forms(first design html) - html page designing
+b)Model Driven Forms(first ts file -> html design) - advanced validation methods
+    1)Reactive Form
+        form group,array,control
+        -we can directly add validation methods
+            ->add validation
+            ->import reactive forms modules

@@ -1,0 +1,14 @@
+#logo
+{
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(68, 113, 197);
+}
+body
+{
+    background-color: rgba(0, 115, 255, 0.173);
+}
+#main
+{
+    background-color: rgb(230, 245, 254);
+    margin-top: 100px;
+}

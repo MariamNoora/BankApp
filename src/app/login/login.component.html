@@ -12,6 +12,23 @@
 <link href="https://fonts.googleapis.com/css2?family=Aclonica&family=Alumni+Sans+Inline+One:ital@1&family=Eagle+Lake&family=Montserrat:wght@100;200&family=Mouse+Memoirs&family=Open+Sans:wght@300&family=Source+Code+Pro:wght@300&family=Square+Peg&display=swap" rel="stylesheet">
 </head>
 <body>
+    <nav class="navbar navbar-light" style="background-color:rgb(183, 216, 254) ;">
+        <div class="container-fluid">
+          <a class="navbar-brand text-primary"><b>MY BANK</b> Your Perfect Banking Partner</a>
+          <form class="d-flex input-group w-auto">
+            <input
+              type="search"
+              type="search"
+              class="form-control rounded"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <span class="input-group-text border-0" id="search-addon">
+              <i class="fas fa-search"></i>
+            </span>
+          </form>
+        </div>
+      </nav>
     <div class="row">
         <div class="col-4"></div>
         <div id="main" class="col-4 container border border-3 border-info rounded p-5 shadow">
@@ -23,11 +40,11 @@
             </div>
             <h6 class="text-secondary text-center">{{aim}}</h6>
             <form action="" class="p-4">
-            <input type="text" #acno id="login_acno" name="acno" class="form-control p-1 mt-3 border border-1 border-info rounded-3 shadow" [placeholder]="accounts">
-            <input type="password" #pswd id="login_pswd" name="password" class="form-control p-1 mt-3 border border-1 border-info rounded-3 shadow" placeholder="Password">
-            <button type="button" (click)="login(acno,pswd)" class="form-control p-1 mt-4 btn btn-info rounded-5 text-light shadow">Log In</button>
+            <input type="text" [(ngModel)]="acno" id="login_acno" name="acno" class="form-control p-1 mt-3 border border-1 border-info rounded-3 shadow" placeholder="Accounts">
+            <input type="password" [(ngModel)]="pswd" id="login_pswd" name="pswd" class="form-control p-1 mt-3 border border-1 border-info rounded-3 shadow" placeholder="Password">
+            <button type="button" (click)="login()" class="form-control p-1 mt-4 btn btn-info rounded-5 text-light shadow">Log In</button>
             <div class="mt-3 text-center text-secondary">
-                <a href="#">Forget password</a> or <a href="signup.html">Sign Up</a> 
+                <a href="#">Forget password</a> or <a routerLink="registration">Sign Up</a> 
             </div>
         </form>
         </div>

@@ -21,13 +21,13 @@
             </svg>
             <h4 id="logo"><b>MY BANK</b></h4>
             </div>
-            <form action="" class="p-4">
-            <input type="text" name="userName" id="reg_name" class="form-control p-1 mt-3 border border-1 border-info rounded-3 shadow" [(ngModule)]="uname" placeholder="Username">
-            <input type="text" name="Account number" id="reg_acno" class="form-control p-1 mt-3 border border-1 border-info rounded-3 shadow" [(ngModule)]="acno" placeholder="Account number">
-            <input type="password" name="password" id="reg_pswd" class="form-control p-1 mt-3 border border-1 border-info rounded-3 shadow" [(ngModule)]="pswd" placeholder="Password">
+            <form action="" [formGroup]="registerForm" class="p-4"> <!-- [] -> property binding -->
+            <input type="text" name="uname" id="reg_name" class="form-control p-1 mt-3 border border-1 border-info rounded-3 shadow" formControlName="uname" placeholder="Username">
+            <input type="text" name="acno" id="reg_acno" class="form-control p-1 mt-3 border border-1 border-info rounded-3 shadow" formControlName="acno" placeholder="Account number">
+            <input type="password" name="pswd" id="reg_pswd" class="form-control p-1 mt-3 border border-1 border-info rounded-3 shadow" formControlName="pswd" placeholder="Password">
             <button type="button'" (click)="registration()" class="form-control p-1 mt-4 btn btn-info rounded-5 text-light shadow">Register</button>
             <div class="text-center fs-6 mt-3">
-                <a href="./index.html">Sign In</a>
+                <a routerLink="">Sign In</a>
             </div>
         </form>
         </div>

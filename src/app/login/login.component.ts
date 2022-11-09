@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-login',
@@ -10,19 +12,19 @@ export class LoginComponent implements OnInit {   //3rd execution
   aim=`Your Perfect Banking Partner`;
   accounts="Enter your account number";
   acno='';
-  password='';
+  pswd='';
+  userDetails: any;
 
-  constructor() { }  //1st execution
+  constructor(private router:Router, private ds:DataService ) { }  //1st execution
+  // dependancy injection
+
+
+
 
   ngOnInit(): void {  //life cycle hooks - initial process
   }
 //userdefined functions()     //4th execution
-userDetails:any=   //object of objects
-{
-  1000:{acno:1000,username:'Gopik',password:1000,balance:10000},
-  1001:{acno:1001,username:'Soja',password:1001,balance:10000},
-  1002:{acno:1002,username:'Abhijith',password:1002,balance:10000}
-}
+
 
 acnoChange(event:any)
 {
@@ -34,20 +36,35 @@ acnoChange(event:any)
 pswdChange(event:any)
 {
   console.log(event.target.value);
-  this.password=event.target.value;  
+  this.pswd=event.target.value;  
 }
 
-// login()
+login()
+{
+  // alert('Login clicked');
+  var acno=this.acno;
+  var pswd=this.pswd;
+  const result=this.ds.login(acno,pswd);
+  if(result)
+  {
+    alert("login successful")
+    this.router.navigateByUrl('dashboard');
+  }
+}
+
+
+
+// login(a:any,p:any)
 // {
 //   // alert('Login clicked');
-//   var a=this.acno;
-//   var p=this.password;
+//   var acno=a.value;
+//   var pswd=p.value;
   
 //   var userDetails=this.userDetails;
 
-//   if(a in userDetails)
+//   if(acno in userDetails)
 //   {
-//     if(p==userDetails[a][p])
+//     if(pswd==userDetails[acno]['password'])
 //     {
 //       alert("login successful")
 //     }
@@ -61,34 +78,5 @@ pswdChange(event:any)
 //     alert("user does not exist")
 //   }
 // }
-
-
-
-login(a:any,p:any)
-{
-  // alert('Login clicked');
-  var acno=a.value;
-  var pswd=p.value;
-  
-  var userDetails=this.userDetails;
-
-  if(acno in userDetails)
-  {
-    if(pswd==userDetails[acno]['password'])
-    {
-      alert("login successful")
-    }
-    else
-    {
-      alert("incorrect password")
-    }
-  }
-  else
-  {
-    alert("user does not exist")
-  }
-}
-
-
 }
 
